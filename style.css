@@ -46,4 +46,9 @@
     color: #130524;
     border-style: solid;
     border-color: #392255;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: radial-gradient(circle,rgb(105, 200, 226) 0%, rgba(84, 70, 138, 1) 100%);
   }

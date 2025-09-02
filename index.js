@@ -41,22 +41,17 @@ function onClickDiego (){
 function updateDateTime() {
   const now = new Date();
 
-  // Format time as HH:MM (24h)
   let hours = String(now.getHours()).padStart(2, '0');
   let minutes = String(now.getMinutes()).padStart(2, '0');
   document.getElementById('todaysTime').textContent = `${hours}:${minutes}`;
 
-  // Format date as DD/MM/YYYY
   let day = String(now.getDate()).padStart(2, '0');
-  let month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+  let month = String(now.getMonth() + 1).padStart(2, '0');
   let year = now.getFullYear();
   document.getElementById('todaysDay').textContent = `${day}/${month}/${year}`;
 }
 
-// Update once at start
 updateDateTime();
-
-// Update every second
 setInterval(updateDateTime, 1000);
 
 // https://chatgpt.com/share/68b63c71-ddf4-8002-a2c4-08bc03219242
