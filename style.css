@@ -1,6 +1,6 @@
   body {
     height: 100vh;
-    background: linear-gradient(166deg,rgba(42, 123, 155, 1) 0%, rgba(31, 31, 33, 1) 69%);
+    background: linear-gradient(136deg,rgba(58, 180, 107, 1) 0%, rgba(39, 39, 92, 1) 71%, rgba(30, 21, 51, 1) 100%);
 
   }
 
@@ -43,7 +43,7 @@
     font-size: 18px;
     border-radius: 10px;
     background: radial-gradient(circle,rgba(71, 161, 186, 1) 0%, rgba(84, 70, 138, 1) 100%);
-    color: #130524;
+    color: #fcfcfc;
     border-style: solid;
     border-color: #392255;
     cursor: pointer;
