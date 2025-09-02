@@ -1,0 +1,10 @@
+  body {
+    height: 100vh;
+    background: linear-gradient(166deg,rgba(42, 123, 155, 1) 0%, rgba(31, 31, 33, 1) 69%);
+
+  }
+
+  .container {
+    display: flexbox;
+    flex-direction: column;
+  }
