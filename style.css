@@ -5,6 +5,55 @@
   }
 
   .container {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
+  }
+
+  header {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+
+  #todaysDay {
+    font-size: 14px;
+  }
+
+  #todaysTime {
+    font-size: 26px;
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 35px;
+    padding: 15px;
+  }
+
+  button {
+    height: 60px;
+    width: 120px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: radial-gradient(circle,rgba(71, 161, 186, 1) 0%, rgba(84, 70, 138, 1) 100%);
+    color: #130524;
+    border-style: solid;
+    border-color: #392255;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: radial-gradient(circle,rgb(105, 200, 226) 0%, rgba(84, 70, 138, 1) 100%);
+    transform: scale(1.02);
+  }
+
+  button:active {
+    transform: scale(0.98);
   }
