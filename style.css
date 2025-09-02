@@ -1,3 +1,6 @@
+  @import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
+
+  
   body {
     height: 100vh;
     background: linear-gradient(136deg,rgba(58, 180, 107, 1) 0%, rgba(39, 39, 92, 1) 71%, rgba(30, 21, 51, 1) 100%);
@@ -18,13 +21,18 @@
     justify-content: center;
     color: #fff;
   }
-
+  #container{
+    background-color: #111;
+    border: 1pt solid red;
+    padding: 5px;
+    font-family: "Bytesized", sans-serif;    color: red;
+  }
   #todaysDay {
-    font-size: 14px;
+    font-size: 28px;
   }
 
   #todaysTime {
-    font-size: 26px;
+    font-size: 36px;
   }
 
   .buttonContainer {
