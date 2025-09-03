@@ -1,9 +1,8 @@
 function onClick(username)
 {
     var timeNow = new Date();
-    var todaysDay = `${dateFormat(timeNow.getDay())}/${timeNow.getMonth()+1}/${timeNow.getFullYear()}`;
-    var todaysTime = `${timeNow.getHours()}:${timeNow.getMinutes()}`;
-
+    var todaysDay = `${dateTimeFormat(timeNow.getDay())}/${dateTimeFormat(timeNow.getMonth()+1)}/${timeNow.getFullYear()}`;
+    var todaysTime = `${dateTimeFormat(timeNow.getHours())}:${dateTimeFormat(timeNow.getMinutes())}`;
     var user = username.innerText;
     fetch
     (
@@ -19,22 +18,32 @@ function onClick(username)
             })
         }
     );
+    validation(user, todaysDay, todaysTime);
 }
 
-function dateFormat (date)
+function dateTimeFormat (dateTime)
 {
-    if (date.lenght>1)
-    {
-        return date;
-    }
-    else
-    {
-        return `0${date}`
-
-    }
-
+   return String(dateTime).padStart(2, "0");
+   
 }
 
+function validation (user, todaysDay, todaysTime)
+{
+    const btn = document.getElementById('btnContainer');
+    const txt = document.createElement('p');
+    txt.textContent = `Registrado evento do usuário ${user}, dia ${todaysDay} e horário ${todaysTime}`;
+    btn.appendChild(txt);
+    setTimeout
+    (
+        () => txt.textContent = "",
+        5000
+    );
+    
+
+
+
+
+}
 
 
 

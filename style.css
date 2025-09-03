@@ -6,6 +6,11 @@
     background: linear-gradient(136deg,rgba(58, 180, 107, 1) 0%, rgba(39, 39, 92, 1) 71%, rgba(30, 21, 51, 1) 100%);
 
   }
+  p{
+    color: #fff;
+    size: 45px;
+    text-shadow: 1px 1px 2px #111;
+  }
 
   .container {
     display: flex;
