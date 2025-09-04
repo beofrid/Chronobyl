@@ -8,6 +8,7 @@
   body {
     height: 100vh;
     background: linear-gradient(90deg,rgb(17, 15, 15) 0%, rgba(10, 1, 1, 1) 100%);
+    margin: 0;
 
   }
   p{
@@ -44,6 +45,8 @@
     font-family: 'Digital';
     color: rgb(250, 27, 27);
     text-shadow: 0.5px 0.5px 5px rgba(250, 92, 92, 0.575);
+    margin-right: 10px;
+    margin-top: 10px;
   }
   #todaysDay {
     font-size: 28px;
