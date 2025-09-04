@@ -38,10 +38,6 @@ function validation (user, todaysDay, todaysTime)
         () => txt.textContent = "",
         5000
     );
-    
-
-
-//aa
 
 }
 
