@@ -1,8 +1,8 @@
 function onClick(username)
 {
     var timeNow = new Date();
-    var todaysDay = `${dateTimeFormat(timeNow.getDay())}/${dateTimeFormat(timeNow.getMonth()+1)}/${timeNow.getFullYear()}`;
-    var todaysTime = `${dateTimeFormat(timeNow.getHours())}:${dateTimeFormat(timeNow.getMinutes())}`;
+    var todaysDay = `'${dateTimeFormat(timeNow.getDay())}/${dateTimeFormat(timeNow.getMonth()+1)}/${timeNow.getFullYear()}`;
+    var todaysTime = `'${dateTimeFormat(timeNow.getHours())}:${dateTimeFormat(timeNow.getMinutes())}`;
     var user = username.innerText;
     fetch
     (
@@ -27,6 +27,14 @@ function dateTimeFormat (dateTime)
    
 }
 
+function getData ()
+{
+    
+
+
+
+}
+
 function validation (user, todaysDay, todaysTime)
 {
     const btn = document.getElementById('btnContainer');
@@ -38,11 +46,6 @@ function validation (user, todaysDay, todaysTime)
         () => txt.textContent = "",
         5000
     );
-    
-
-
-
-
 }
 
 
