@@ -1,3 +1,7 @@
+const URL = "https://script.google.com/macros/s/AKfycbz2mmRqPCeu6o3wyyWRib4gflyb5llaoMWF-5p2XQhNWsBr7iWQdoqEQzU5xysNLr8/exec";
+window.onload = getData();
+
+
 function onClick(username)
 {
     var timeNow = new Date();
@@ -6,7 +10,7 @@ function onClick(username)
     var user = username.innerText;
     fetch
     (
-        "https://script.google.com/macros/s/AKfycbz0y81iMIL5gt2vPIWSA8gAQ_gMKTiBglBIZ-h0pMCANxtg5ESPMAFfPku9fj00RRw/exec", 
+        URL, 
         {
             method: "POST",
             body: JSON.stringify
@@ -29,12 +33,49 @@ function dateTimeFormat (dateTime)
 
 function getData ()
 {
+    const logContainer = document.querySelector('.logContainer');
+    logContainer.innerHTML = "<strong>Carregando . . . </strong>"
+    fetch(URL)
+        .then(response=>response.json())
+        .then
+        (data=>
+            {
+                logContainer.innerHTML = '';
+                if(data.lenght === 0)
+                {
+                    logContainer.innerHTML = '<p>Não há registros</p>';
+                    return;
+                }
 
-
+                data.forEach
+                (row => 
+                    {
+                        const column1 = row[0];
+                        const column2 = row[1];
+                        const column3 = row[2];
+                        const logElement = document.createElement('div');
+                        logElement.className = "logElement";
+                        logElement.innerHTML = 
+                        `
+                            <span><strong>Data</strong>${column1}</span> 
+                            <span><strong>Hora</strong>${column2}</span>
+                            <span><strong>Usuário</strong>${column3}</span>
+                        `;
+                        logContainer.appendChild(logElement);
+                    }
+                );
+            }
+        ).catch
+        (error =>
+            {
+                console.error('Erro ao buscar dados:', error);
+                container.innerHTML = '<p>Não foi possível carregar os dados</p>';
+            }    
+        )
+        
 
 
 }
-
 function validation (user, todaysDay, todaysTime)
 {
     const btn = document.getElementById('btnContainer');
