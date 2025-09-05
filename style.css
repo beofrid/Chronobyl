@@ -1,9 +1,14 @@
   @import url('https://fonts.googleapis.com/css2?family=Bytesized&display=swap');
 
+  @font-face {
+    font-family: 'Digital';
+    src: url('./fonts/DS-DIGI.ttf');
+  }
   
   body {
     height: 100vh;
-    background: linear-gradient(136deg,rgba(58, 180, 107, 1) 0%, rgba(39, 39, 92, 1) 71%, rgba(30, 21, 51, 1) 100%);
+    background: linear-gradient(90deg,rgb(17, 15, 15) 0%, rgba(10, 1, 1, 1) 100%);
+    margin: 0;
 
   }
   p{
@@ -26,14 +31,26 @@
     justify-content: center;
     color: #fff;
   }
-  #container{
-    background-color: #111;
-    border: 1pt solid red;
+
+  #date-display{
+    width: 160px;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: radial-gradient(circle,rgba(31, 15, 15, 1) 0%, rgba(10, 0, 0, 1) 100%);
+    border: 1pt solid rgb(145, 145, 145);
     padding: 5px;
-    font-family: "Bytesized", sans-serif;    color: red;
+    font-family: 'Digital';
+    color: rgb(250, 27, 27);
+    text-shadow: 0.5px 0.5px 5px rgba(250, 92, 92, 0.575);
+    margin-right: 10px;
+    margin-top: 10px;
   }
   #todaysDay {
     font-size: 28px;
+    align-self: flex-end;
   }
 
   #todaysTime {
@@ -48,25 +65,39 @@
     margin-top: 40px;
     gap: 35px;
     padding: 15px;
+    background: radial-gradient(circle,rgba(38, 38, 38, 1) 0%, rgba(10, 10, 10, 1) 100%);
+    border: 2px solid rgb(8, 8, 8);
   }
 
   button {
     height: 60px;
     width: 120px;
     font-size: 18px;
-    border-radius: 10px;
-    background: radial-gradient(circle,rgba(71, 161, 186, 1) 0%, rgba(84, 70, 138, 1) 100%);
-    color: #fcfcfc;
-    border-style: solid;
-    border-color: #392255;
+    font-weight: 800;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 2px;
+    background: linear-gradient(49deg,rgba(23, 23, 23, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    color: #928a84;
+    border-style: outset;
+    border-color: #38363a;
     cursor: pointer;
   }
 
   button:hover {
-    background: radial-gradient(circle,rgb(105, 200, 226) 0%, rgba(84, 70, 138, 1) 100%);
-    transform: scale(1.02);
+    background: linear-gradient(49deg,rgb(37, 37, 37) 0%, rgba(0, 0, 0, 1) 100%);
+    transform: scale(1.015);
   }
 
   button:active {
     transform: scale(0.98);
+  }
+
+  .bt-outborder {
+    border: 2px inset rgb(8, 8, 8);
+    height: 70px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(8, 8, 8, 0.219);
   }
