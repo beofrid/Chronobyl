@@ -22,6 +22,7 @@ function onClick(username)
             })
         }
     );
+    
     getData();
 }
 
@@ -34,7 +35,7 @@ function dateTimeFormat (dateTime)
 function getData ()
 {
     const logContainer = document.querySelector('.logContainer');
-    logContainer.innerHTML = "<strong>Carregando . . . </strong>"
+    logContainer.innerHTML = "<div class=\"loader\"></div>"
     fetch(URL)
         .then(response=>response.json())
         .then
@@ -57,9 +58,9 @@ function getData ()
                         logElement.className = "logElement";
                         logElement.innerHTML = 
                         `
-                            <span><strong>Data</strong>${column1}</span> 
-                            <span><strong>Hora</strong>${column2}</span>
-                            <span><strong>Usuário</strong>${column3}</span>
+                            <span class="row"><strong>Data: </strong>${column1}</span>&nbsp;
+                            <span class="row"><strong>Hora: </strong>${column2}</span>&nbsp;
+                            <span class="row"><strong>Usuário: </strong>${column3}</span>
                         `;
                         logContainer.appendChild(logElement);
                         

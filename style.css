@@ -101,3 +101,23 @@
     justify-content: center;
     background-color: rgba(8, 8, 8, 0.219);
   }
+
+  .logContainer{
+    padding: 4px 0 4px 0;
+    
+  }
+  
+  .row {
+    line-height: 5px;
+  }
+
+
+  .loader {
+      margin: 0 auto;
+      width: 60px;
+      aspect-ratio: 8;
+      background: radial-gradient(circle closest-side,#000 95%,#0000) 0/calc(100%/3) 100% space;
+      clip-path: inset(0 100% 0 0);
+      animation: loading 1s steps(4) infinite;
+  }
+  @keyframes loading {to{clip-path: inset(0 -34% 0 0)}}
