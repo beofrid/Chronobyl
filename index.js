@@ -1,11 +1,11 @@
 const URL = "https://script.google.com/macros/s/AKfycbz2mmRqPCeu6o3wyyWRib4gflyb5llaoMWF-5p2XQhNWsBr7iWQdoqEQzU5xysNLr8/exec";
 window.onload = getData();
-
+var rowsToShow = 5
 
 function onClick(username)
 {
     var timeNow = new Date();
-    var todaysDay = `'${dateTimeFormat(timeNow.getDay())}/${dateTimeFormat(timeNow.getMonth()+1)}/${timeNow.getFullYear()}`;
+    var todaysDay = `'${dateTimeFormat(timeNow.getDate())}/${dateTimeFormat(timeNow.getMonth()+1)}/${timeNow.getFullYear()}`;
     var todaysTime = `'${dateTimeFormat(timeNow.getHours())}:${dateTimeFormat(timeNow.getMinutes())}`;
     var user = username.innerText;
     fetch
@@ -22,7 +22,7 @@ function onClick(username)
             })
         }
     );
-    validation(user, todaysDay, todaysTime);
+    getData();
 }
 
 function dateTimeFormat (dateTime)
@@ -41,13 +41,13 @@ function getData ()
         (data=>
             {
                 logContainer.innerHTML = '';
-                if(data.lenght === 0)
+                console.log(data)
+                if(data.length === 0)
                 {
                     logContainer.innerHTML = '<p>Não há registros</p>';
                     return;
                 }
-
-                data.forEach
+                data.slice(-10).forEach
                 (row => 
                     {
                         const column1 = row[0];
@@ -62,6 +62,7 @@ function getData ()
                             <span><strong>Usuário</strong>${column3}</span>
                         `;
                         logContainer.appendChild(logElement);
+                        
                     }
                 );
             }
@@ -76,18 +77,7 @@ function getData ()
 
 
 }
-function validation (user, todaysDay, todaysTime)
-{
-    const btn = document.getElementById('btnContainer');
-    const txt = document.createElement('p');
-    txt.textContent = `Registrado evento do usuário ${user}, dia ${todaysDay} e horário ${todaysTime}`;
-    btn.appendChild(txt);
-    setTimeout
-    (
-        () => txt.textContent = "",
-        5000
-    );
-}
+
 
 
 
