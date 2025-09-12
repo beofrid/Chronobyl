@@ -5,10 +5,20 @@ var rowsToShow = 5
 
 function onClick(username)
 {
+    var user = localStorage.getItem("userId");
+    if(user == null)
+    {
+        window.location.assign("./pages/userIdentification.html");
+        return;
+    }
+
+
     var timeNow = new Date();
     var todaysDay = `'${dateTimeFormat(timeNow.getDate())}/${dateTimeFormat(timeNow.getMonth()+1)}/${timeNow.getFullYear()}`;
     var todaysTime = `'${dateTimeFormat(timeNow.getHours())}:${dateTimeFormat(timeNow.getMinutes())}`;
-    var user = username.innerText;
+    var usr = username;
+    console.log(usr)
+    //username.innerText;
     fetch
     (
         URL, 

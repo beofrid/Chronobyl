@@ -2,7 +2,7 @@
 
   @font-face {
     font-family: 'Digital';
-    src: url('./fonts/DS-DIGI.ttf');
+    src: url('../fonts/DS-DIGI.ttf');
   }
   
   body {
